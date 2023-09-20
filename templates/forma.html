@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+<!-- Latest compiled and minified CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css" rel="stylesheet">
+<!-- Latest compiled JavaScript -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/bootstrap.bundle.min.js"></script>
+    <link rel="stylesheet" href="{% static 'css/home_water.css' %}" type="text/css">  {#подключение css#}
+    <title>Title</title>
+</head>
+<body>
+    <div class="container">
+<form method="POST" enctype="multipart/form-data" novalidate> {# enctype="multipart/form-data" #}  {# novalidate убираем проверку ошибок в браузере проверять будет питон функции #}
+{#    {% csrf_token %}#}
+{#    <div>#}
+{#    <table>#}
+{#        {{ form }}#}
+{#    </table>#}
+{#    </div>#}
+{#    <input type="submit" value="Отправить" class="btn btn-outline-primary">#}
+
+        {% csrf_token %}  {# токен для шифрования данных #}
+    {% for f in form %}  {# начало цикла #}
+        <div>{{ f.label_tag }}</div>   {# Ставит в таблицу поля #}
+        <div>{{ f }}</div>             {# выводит каждое поле #}
+        <div>{{ f.errors }}</div>  {# Выводит ошибки при нажатии на отправить #}
+    {% endfor %}  {# конец цикла #}
+{#    {{ form.as_div}}#}
+{#    {{ form }}#}
+    <br>
+    <input type="submit" value="Отправить" class="btn btn-outline-primary">
+
+</form>
+    </div>
+</body>
+</html>

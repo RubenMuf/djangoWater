@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="en" style="background-color: darkgoldenrod">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+<!-- Latest compiled and minified CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css" rel="stylesheet">
+<!-- Latest compiled JavaScript -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/bootstrap.bundle.min.js"></script>
+    <link rel="stylesheet" href="{% static 'css/person.css' %}" type="text/css">  {#подключение css#}
+    <title>Title</title>
+</head>
+
+<div class="container-fluid" style="background-color: black">
+  <h2 style="color: white">Ваш заказ:</h2>
+    <h3 style="color: white">Пейте на здоровье!</h3>
+  <ul class="list-group">
+    <li class="list-group-item list-group-item-success">{{ name }}</li>
+    <li class="list-group-item list-group-item-secondary">{{ lastname }}</li>
+    <li class="list-group-item list-group-item-info">E-mail: {{ E_mail }}</li>
+    <li class="list-group-item list-group-item-warning">Телефон: {{ tel }}</li>
+    <li class="list-group-item list-group-item-danger">Адрес: {{ address }}</li>
+    <li class="list-group-item list-group-item-primary"> Количество месяцев: {{ month }}</li>
+    <li class="list-group-item list-group-item-dark">Объём бутыля: {{ v }}</li>
+    <li class="list-group-item list-group-item-light">Количество бутылей: {{ quantity }}</li>
+  </ul>
+        <img src="{% static 'img/wat.jpg' %}" class="img-thumbnail" alt="foto" width="350px">
+        <h2 style="color: white">К оплате: {{ price }} рублей.</h2>
+</div>
+
+
+
+
+
+</body>
+</html>
